@@ -10,3 +10,7 @@ class Request(models.Model):
     scheme = models.CharField(max_length=10)
     sessionid = models.TextField(default="null")
 
+
+class Session(models.Model):
+    session_id = models.TextField(null=False)
+    session_start = models.TimeField(auto_now=True)

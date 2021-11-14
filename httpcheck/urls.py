@@ -14,16 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from httpCheck.views import public_api
 from httpCheck.views import public_api_with_id
 from httpCheck.views import public_api_with_garbage
 from httpCheck.views import create_session
+from web.views import home
 
 urlpatterns = [
     path('session/', create_session, name="createSession"),
     path('admin/', admin.site.urls),
     path('api/', public_api, name="publicApi"),
     path('api/<str:session_id>/', public_api_with_id, name="publicApiWithId"),
-    path('api/<str:session_id>/<path:garbage>', public_api_with_garbage, name="publicApiWithGarbage")
+    path('api/<str:session_id>/<path:garbage>', public_api_with_garbage, name="publicApiWithGarbage"),
+
+    #Web
+    path('', home, name="home")
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+

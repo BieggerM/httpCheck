@@ -8,7 +8,7 @@ class Request(models.Model):
     path = models.TextField()
     payload = models.TextField()
     scheme = models.CharField(max_length=10)
-    sessionid = models.TextField(default="null")
+    session_id = models.TextField(default="null")
 
 
 class Session(models.Model):

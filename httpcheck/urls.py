@@ -21,9 +21,9 @@ from httpCheck.views import public_api_with_garbage
 from httpCheck.views import create_session
 
 urlpatterns = [
-    path('session/<int:id>/', create_session, name="createSession"),
+    path('session/', create_session, name="createSession"),
     path('admin/', admin.site.urls),
     path('api/', public_api, name="publicApi"),
-    path('api/<int:id>/', public_api_with_id, name="publicApiWithId"),
-    path('api/<int:id>/<path:garbage>', public_api_with_garbage, name="publicApiWithGarbage")
+    path('api/<str:session_id>/', public_api_with_id, name="publicApiWithId"),
+    path('api/<str:session_id>/<path:garbage>', public_api_with_garbage, name="publicApiWithGarbage")
 ]

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>basic_RestRequest</title>
     {% load static %}
-    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../static/assets/css/Features-Clean.css">
-    <link rel="stylesheet" href="../static/assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="../static/assets/css/Highlight-Blue.css">
-    <link rel="stylesheet" href="../static/assets/css/styles.css">
+    <link rel="stylesheet" href="../static/home/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/home/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/home/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../static/home/assets/css/Features-Clean.css">
+    <link rel="stylesheet" href="../static/home/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../static/home/assets/css/Highlight-Blue.css">
+    <link rel="stylesheet" href="../static/home/assets/css/styles.css">
 </head>
 
 <body>
@@ -23,7 +23,9 @@
                 <hr>
                 <p class="text-center">Public Rest-API Server to&nbsp;to view requests on the receivers end.&nbsp; &nbsp; &nbsp; &nbsp;To get started, generate a session by using the button below.</p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="#">Create Session</a></div>
+            <form action="session" method="GET">
+                <div class="buttons" type="submit"><a class="btn btn-primary" role="button" href="/session">Create Session</a></div>
+            </form>
         </div>
     </section>
     <section class="features-clean">
@@ -82,7 +84,7 @@
             </div>
         </footer>
     </section>
-    <script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/home/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

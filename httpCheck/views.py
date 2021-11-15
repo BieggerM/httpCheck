@@ -3,8 +3,7 @@ from .models import Request
 from .models import Session
 from django.http import JsonResponse
 import datetime
-import random
-import string
+
 
 
 @csrf_exempt
@@ -33,7 +32,7 @@ def public_api_with_garbage(request, session_id, garbage):
 ## Session ##
 @csrf_exempt
 def create_session(request):
-    random_string = randStr()
+    random_string = Session.rand_str()
     session = Session(session_id=random_string, session_start=datetime.datetime.now())
     session.save()
     return JsonResponse({"success": True, "sessionId": random_string, "path": "api/" + random_string + "/"})
@@ -58,8 +57,3 @@ def get_id_not_found_response(id, request):
     return response_data
 
 
-def randStr(chars=string.ascii_uppercase + string.digits, N=15):
-    while True:
-        random_string = ''.join(random.choice(chars) for _ in range(N))
-        if not Session.objects.filter(session_id=random_string).exists():
-            return ''.join(random.choice(chars) for _ in range(N))

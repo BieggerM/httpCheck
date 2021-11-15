@@ -19,7 +19,8 @@
     <section class="highlight-blue">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">RestRequest</h2>
+                <h2 class="text-center font-monospace fw-bold">RestRequest</h2>
+                <hr>
                 <p class="text-center">Public Rest-API Server to&nbsp;to view requests on the receivers end.&nbsp; &nbsp; &nbsp; &nbsp;To get started, generate a session by using the button below.</p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="#">Create Session</a></div>
@@ -28,8 +29,10 @@
     <section class="features-clean">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Features</h2>
-                <p class="text-center">This Project enables Developers the check back on outgoing requests. After creating a session, the provided HTTP-Address will serve as a personal Rest-Endpoint.&nbsp; &nbsp;</p>
+                <h2 class="text-center">Overview</h2>
+
+                <p class="text-center">This Project enables Developers the check back on outgoing requests. There are szenarios where you don't know the origin of your request. Maybe
+                    you are sending it from an external server. So sending the request to a dummy localhost webserver isn't an option. After creating a session, the provided HTTP-Address will serve as a personal Rest-Endpoint.&nbsp; &nbsp;</p>
             </div>
             <div class="row features">
                 <div class="col-sm-6 col-lg-4 item"><i class="fa fa-map-marker icon"></i>
@@ -49,12 +52,12 @@
                     <p class="description">Running webservers does cost computing resources and energy. The Rest Request Community can contribute to saving the planet, just by looking at Rest-Requests</p>
                 </div>
                 <div class="col-sm-6 col-lg-4 item"><i class="fa fa-plane icon"></i>
-                    <h3 class="name">Fast</h3>
+                    <h3 class="name">Fast.</h3>
                     <p class="description">Build in Django, this simple Projects features a high performance infrastructure to get your information fast. See for yourself. Visit the project on Github.</p>
                 </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-phone icon"></i>
-                    <h3 class="name">Your data is secure</h3>
-                    <p class="description">We don't save any data in free tier. After the 30 minute session, your data will be deleted.</p>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-lock icon"></i>
+                    <h3 class="name">Your data is secure.</h3>
+                    <p class="description">Your Requests are temporarily saved on a managed mongo atlas instance. After 30 minutes, the session expires and your data will be deleted.</p>
                 </div>
             </div>
         </div>

@@ -16,10 +16,10 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-button">
-        <div class="container"><a class="navbar-brand" href="#">RestRequest</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="/">RestRequest</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">New Session</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="{% url sessionreload %}" href="">New Session</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
                 </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#">Donate</a></span>
             </div>
@@ -42,7 +42,7 @@
                                         <div class="card card-bordered">
                                             <div class="card-body">
                                                 <!--begin::Button-->
-                                                <button id="kt_clipboard_3" class="btn btn-light-primary" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+                                                <button id="kt_clipboard_3" class="btn btn-light-primary" data-clipboard-text="http://restrequest.dev/api/{{ request.session.session_id }}">
                                                     Copy to clipboard
                                                 </button>
                                                 <!--end::Button-->
@@ -59,7 +59,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Request Type</h4>
-                        <h6 class="text-muted card-subtitle mb-2">/api/sljafkwjkwaüc/kwkgls/föwakls/skal3</h6>
+                        <h6 class="text-muted card-subtitle mb-2">/api/{{ request.session.session_id }}</h6>
                         <p class="card-text">Information...</p>
                     </div>
                 </div>

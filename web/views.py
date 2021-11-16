@@ -17,3 +17,7 @@ def session(request):
         session.save()
         request.session['session_id'] = session_id
     return render(request, "session.html", {})
+
+def sessionreload(request):
+    del request.session['session_id']
+    return session(request)

@@ -24,6 +24,7 @@ from httpCheck.views import public_api_with_garbage
 from httpCheck.views import create_session
 from web.views import home
 from web.views import session
+from web.views import sessionreload
 
 urlpatterns = [
     path('newsession/', create_session, name="createSession"),
@@ -34,7 +35,8 @@ urlpatterns = [
 
     #Web
     path('', home, name="home"),
-    path('session/', session, name="session")
+    path('session/', session, name="session"),
+    path('sessionreload/', sessionreload, name="sessionreload")
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -3,6 +3,7 @@ import datetime
 from django.shortcuts import render
 from httpCheck.models import Session
 
+
 def home(request):
     return render(request, "home.html", {})
 
@@ -17,6 +18,7 @@ def session(request):
         session.save()
         request.session['session_id'] = session_id
     return render(request, "session.html", {})
+
 
 def sessionreload(request):
     del request.session['session_id']

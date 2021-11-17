@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'httpCheck.apps.HttpcheckConfig',
     'rest_framework',
     'bootstrap3',
+    'jquery',
 ]
 
 MIDDLEWARE = [

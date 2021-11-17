@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}<!doctype html>
 <html lang="en">
 
 <head>
@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../static/session/assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="../static/session/assets/css/styles.css">
     <script src="../static/dist/clipboard.min.js"></script>
+    <!--- JQuery --->
+    <script type="text/javascript" src="{{ STATIC_URL }} /static/dist/jquery.js">
+</script>
 </head>
 
 <body>
@@ -19,7 +22,11 @@
         <div class="container"><a class="navbar-brand" href="/">RestRequest</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" onclick="{% url sessionreload %}" href="">New Session</a></li>
+                    <form id="newsession">
+                        {% csrf_token %}
+                        <button class="btn-light"><a class="nav-link" type="submit">New Session</a></button>
+                    </form>
+
                     <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
                 </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#">Donate</a></span>
             </div>
@@ -93,6 +100,30 @@
             }, 3000)
         });
     </script>
+    {% block javascript %}
+
+    <script>
+        $("#newsession").submit(function (e) {
+            // preventing from page reload and default actions
+            e.preventDefault();
+            // serialize the data for sending the form data.
+            var serializedData = $(this).serialize();
+            // make POST ajax call
+            $.ajax({
+                type: 'GET',
+                url: "{% url "sessionreload" %}",
+                data: serializedData,
+                success: function (response) {
+                    location.reload();
+                }
+            })
+
+
+        })
+
+    </script>
+
+{% endblock javascript %}
 </body>
 <footer>
 </footer>

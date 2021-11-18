@@ -12,6 +12,9 @@ class Request(models.Model):
     scheme = models.CharField(max_length=10)
     session_id = models.TextField(default="null")
 
+    def get_method(self):
+        return self.method
+
 
 class Session(models.Model):
     session_id = models.TextField(null=False)

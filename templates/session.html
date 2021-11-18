@@ -63,15 +63,19 @@
                 </section>
             </div>
             <div class="col-md-6">
+                {% for req in request_objects %}
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Request Type</h4>
-                        <h6 class="text-muted card-subtitle mb-2">/api/{{ request.session.session_id }}</h6>
-                        <p class="card-text">Information...</p>
+                        <h4 class="card-title">Request Type: {{ req.method }}</h4>
+                        <h6 class="text-muted card-subtitle mb-2">{{ req.path }}</h6>
+                        <p class="card-text">{{ req.payload }}</p>
                     </div>
                 </div>
+                    <hr>
+            {% endfor %}
             </div>
         </div>
+
     </div>
     <div class="card"></div>
     <script src="../static/session/assets/bootstrap/js/bootstrap.min.js"></script>

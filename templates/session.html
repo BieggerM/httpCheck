@@ -68,7 +68,9 @@
                     <div class="card-body">
                         <h4 class="card-title">Request Type: {{ req.method }}</h4>
                         <h6 class="text-muted card-subtitle mb-2">{{ req.path }}</h6>
-                        <p class="card-text">{{ req.payload }}</p>
+                    <code>
+                        {{ req.payload }}
+                    </code>
                     </div>
                 </div>
                     <hr>

@@ -3,6 +3,7 @@ from .models import Request
 from .models import Session
 from django.http import JsonResponse
 import datetime
+import json
 
 
 
@@ -46,7 +47,8 @@ def get_response(session_id, request):
 
 
 def save_request(session_id, request):
-    request_object = Request(method=request.method, path=request.path, payload=request.body, scheme=request.scheme,
+    formatted = json.dumps(request.body.decode("utf-8"))
+    request_object = Request(method=request.method, path=request.path, payload=formatted, scheme=request.scheme,
                              session_id=session_id)
     request_object.save()
 
